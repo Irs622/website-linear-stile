@@ -1,26 +1,144 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-canvas: #010102;
+  --color-surface-1: #0f1011;
+  --color-surface-2: #141516;
+  --color-surface-3: #18191a;
+  --color-surface-4: #191a1b;
+  --color-hairline: #23252a;
+  --color-lavender: #5e6ad2;
+  --color-lavender-hover: #828fff;
+  --color-semantic-success: #27a644;
+
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  
+  --font-sans: "Inter", "Geist Sans", "SF Pro Display", -apple-system, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "SF Mono", "JetBrains Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #010102;
+  --foreground: #f7f8f8;
+  
+  --card: #0f1011;
+  --card-foreground: #f7f8f8;
+  
+  --popover: #0f1011;
+  --popover-foreground: #f7f8f8;
+  
+  --primary: #5e6ad2;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #0f1011;
+  --secondary-foreground: #f7f8f8;
+  
+  --muted: #141516;
+  --muted-foreground: #8a8f98;
+  
+  --accent: #141516;
+  --accent-foreground: #f7f8f8;
+  
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f7f8f8;
+  
+  --border: #23252a;
+  --input: #23252a;
+  --ring: #5e6ad2;
+  
+  --radius: 0.5rem;
+}
+
+/* Dark mode by default for this portfolio */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-lavender/30;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-display-xl {
+    @apply text-[clamp(2.5rem,8vw,5rem)] font-semibold leading-[1.05] tracking-[-0.04em];
+  }
+  .text-display-lg {
+    @apply text-[clamp(2rem,6vw,3.5rem)] font-semibold leading-[1.10] tracking-[-0.03em];
+  }
+  .text-display-md {
+    @apply text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.025em];
+  }
+  .text-headline {
+    @apply text-[28px] font-semibold leading-[1.20] tracking-[-0.02em];
+  }
+  .text-card-title {
+    @apply text-[22px] font-medium leading-[1.25] tracking-[-0.015em];
+  }
+  .text-subhead {
+    @apply text-[20px] font-normal leading-[1.40] tracking-[-0.01em];
+  }
+  .text-body-lg {
+    @apply text-[18px] font-normal leading-[1.50] tracking-[-0.005em];
+  }
+  .text-body {
+    @apply text-[16px] font-normal leading-[1.50] tracking-[-0.005em];
+  }
+  .text-body-sm {
+    @apply text-[14px] font-normal leading-[1.50] tracking-normal;
+  }
+  .text-caption {
+    @apply text-[12px] font-normal leading-[1.40] tracking-normal;
+  }
+  .text-eyebrow {
+    @apply text-[13px] font-medium leading-[1.30] tracking-[0.04em] uppercase;
+  }
+
+  .border-hairline {
+    @apply border-[#23252a];
+  }
+  
+  .bg-surface-ladder-1 { @apply bg-[#0f1011]; }
+  .bg-surface-ladder-2 { @apply bg-[#141516]; }
+  .bg-surface-ladder-3 { @apply bg-[#18191a]; }
 }
