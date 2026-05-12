@@ -14,14 +14,14 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-hairline bg-canvas/80 backdrop-blur-md h-14">
+    <nav className="sticky top-0 z-50 w-full border-b border-hairline bg-canvas/80 backdrop-blur-md h-20">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="h-6 w-6 rounded bg-lavender flex items-center justify-center text-white font-bold text-[10px] group-hover:bg-lavender-hover transition-colors">
               IS
             </div>
-            <span className="text-[13px] font-medium tracking-tight text-ink hidden sm:block">
+            <span className="text-[18px] font-medium tracking-tight text-ink hidden sm:block">
               {siteMetadata.name}
             </span>
           </Link>
@@ -32,7 +32,7 @@ export const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-[13px] transition-colors hover:text-ink font-medium tracking-tight",
+                  "text-[18px] transition-colors hover:text-ink font-medium tracking-tight",
                   pathname === item.href ? "text-ink" : "text-ink-subtle"
                 )}
               >
@@ -61,8 +61,8 @@ export const Navbar = () => {
           </div>
           
           <Link href="/resume.pdf" target="_blank">
-            <Button variant="secondary" className="h-8 gap-2 px-3.5 text-[11px] font-semibold border-hairline bg-surface-1 hover:bg-surface-2 hidden sm:flex rounded-md">
-              <FileText className="h-3 w-3" />
+            <Button variant="secondary" className="h-10 gap-2 px-4 text-[14px] font-semibold border-hairline bg-surface-1 hover:bg-surface-2 hidden sm:flex rounded-md">
+              <FileText className="h-3.5 w-3.5" />
               Resume
             </Button>
           </Link>
@@ -71,7 +71,7 @@ export const Navbar = () => {
             className="md:hidden text-ink-subtle hover:text-ink p-1"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -83,7 +83,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-14 left-0 w-full border-b border-hairline bg-canvas/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+            className="md:hidden absolute top-20 left-0 w-full border-b border-hairline bg-canvas/95 backdrop-blur-xl shadow-2xl overflow-hidden"
           >
             <div className="flex flex-col gap-1 p-4">
               {navItems.map((item) => (
@@ -91,7 +91,7 @@ export const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-body-sm font-medium p-3 rounded-md transition-all active:bg-surface-2",
+                    "text-[18px] font-medium p-4 rounded-md transition-all active:bg-surface-2",
                     pathname === item.href ? "text-lavender bg-lavender/5" : "text-ink-muted hover:text-ink hover:bg-surface-1"
                   )}
                   onClick={() => setIsOpen(false)}
@@ -106,7 +106,7 @@ export const Navbar = () => {
                 <Link href="#" className="text-ink-subtle hover:text-ink">
                   <Linkedin className="h-5 w-5" />
                 </Link>
-                <Button variant="secondary" size="sm" className="ml-auto h-9 text-xs border-hairline">
+                <Button variant="secondary" size="sm" className="ml-auto h-10 text-[14px] border-hairline px-4">
                   Resume
                 </Button>
               </div>

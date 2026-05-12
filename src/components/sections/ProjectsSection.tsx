@@ -13,13 +13,13 @@ export const ProjectsSection = () => {
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="max-w-2xl">
-            <Text variant="eyebrow" className="text-lavender mb-5">
+            <Text variant="eyebrow" className="text-lavender mb-5 text-[12px]">
               Case Studies
             </Text>
-            <Heading variant="display-lg" className="mb-6">
+            <Heading variant="display-lg" className="mb-6 text-[56px] lg:text-[72px] leading-[1.1] tracking-tight">
               Featured Systems
             </Heading>
-            <Text variant="body-lg" className="text-ink-muted leading-relaxed">
+            <Text variant="body-lg" className="text-ink-muted leading-relaxed text-[18px]">
               A selection of projects focusing on architectural integrity, user intentionality, and technical scalability.
             </Text>
           </div>

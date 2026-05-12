@@ -42,13 +42,13 @@ export const TechnicalFocus = () => {
     <section className="py-24 md:py-36 bg-canvas border-t border-hairline">
       <Container>
         <div className="max-w-3xl mb-20">
-          <Text variant="eyebrow" className="text-lavender mb-5">
+          <Text variant="eyebrow" className="text-lavender mb-5 text-[12px]">
             Specialization
           </Text>
-          <Heading variant="display-lg" className="mb-6">
+          <Heading variant="display-lg" className="mb-6 text-[56px] lg:text-[72px] leading-[1.1] tracking-tight">
             Engineering Discipline
           </Heading>
-          <Text variant="body-lg" className="text-ink-muted leading-relaxed">
+          <Text variant="body-lg" className="text-ink-muted leading-relaxed text-[18px]">
             My approach is grounded in structured thinking and a commitment to technical maturity. I prioritize systems that are both powerful and intentional.
           </Text>
         </div>

@@ -9,56 +9,57 @@ export const ExperienceSection = () => {
     <section className="py-24 md:py-36 border-t border-hairline bg-canvas">
       <Container>
         <div className="max-w-3xl mb-20">
-          <Text variant="eyebrow" className="text-lavender mb-5">
+          <Text variant="eyebrow" className="text-lavender mb-5 text-[12px]">
             Background
           </Text>
-          <Heading variant="display-lg" className="mb-6">
+          <Heading variant="display-lg" className="mb-6 text-[56px] lg:text-[72px] leading-[1.1] tracking-tight">
             Technical Growth
           </Heading>
-          <Text variant="body-lg" className="text-ink-muted leading-relaxed">
+          <Text variant="body-lg" className="text-ink-muted leading-relaxed text-[18px]">
             A structured timeline of academic focus, independent projects, and organizational contributions.
           </Text>
         </div>
 
-        <div className="space-y-4 max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full">
           {experience.map((item) => (
             <div 
               key={item.id}
-              className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-12 p-8 rounded-lg border border-hairline bg-surface-1 hover:bg-surface-2 transition-all duration-300"
+              className="group relative flex flex-col gap-6 p-8 md:p-10 rounded-lg border border-hairline bg-[#080809] transition-all duration-300 h-full"
             >
-              <div className="md:col-span-3">
-                <Text variant="caption" className="text-ink-subtle font-mono text-[11px] mb-2 uppercase tracking-widest">
-                  {item.period}
-                </Text>
-                {item.isAcademic && (
-                  <span className="inline-block px-2 py-0.5 rounded-sm bg-lavender/10 text-[9px] font-semibold text-lavender uppercase tracking-[0.1em] border border-lavender/20">
-                    Academic
+              {/* Top Row: Period and Organization */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex flex-col gap-2">
+                  <span className="text-ink-subtle font-mono text-[12px] uppercase tracking-[0.2em] font-medium">
+                    {item.period}
                   </span>
-                )}
+                  {item.isAcademic && (
+                    <div className="inline-flex px-2 py-0.5 rounded-sm border border-lavender/30 bg-lavender/5 w-fit">
+                      <span className="text-[10px] font-bold text-lavender uppercase tracking-[0.1em]">
+                        Academic
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <span className="text-ink-subtle italic font-medium text-[14px] opacity-70">
+                  {item.organization}
+                </span>
               </div>
               
-              <div className="md:col-span-9">
-                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4 gap-2">
-                  <Heading variant="card-title" as="h3" className="group-hover:text-lavender transition-colors">
-                    {item.role}
-                  </Heading>
-                  <Text variant="body-sm" className="text-ink-subtle italic font-medium">
-                    {item.organization}
-                  </Text>
-                </div>
+              {/* Content Row */}
+              <div className="flex flex-col flex-1">
+                <h3 className="text-[18px] font-medium text-ink group-hover:text-lavender transition-colors tracking-tight mb-4">
+                  {item.role}
+                </h3>
                 
-                <Text variant="body-sm" className="text-ink-muted mb-8 leading-relaxed max-w-2xl">
+                <p className="text-ink-muted mb-8 leading-relaxed text-[16px] font-normal line-clamp-3">
                   {item.overview}
-                </Text>
+                </p>
 
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <div className="flex flex-wrap gap-x-6 gap-y-3 mt-auto">
                   {(item.topics || item.contributions)?.map((tag) => (
-                    <div key={tag} className="flex items-center gap-2">
-                      <div className="h-1 w-1 rounded-full bg-hairline-strong group-hover:bg-lavender transition-colors" />
-                      <Text variant="caption" className="text-ink-subtle text-[11px] font-medium tracking-wide">
-                        {tag}
-                      </Text>
-                    </div>
+                    <span key={tag} className="text-ink-subtle text-[10px] font-medium uppercase tracking-[0.12em] font-mono opacity-50">
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>

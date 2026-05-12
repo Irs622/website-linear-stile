@@ -31,21 +31,21 @@ export const WritingSection = () => {
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="max-w-2xl">
-            <Text variant="eyebrow" className="text-lavender mb-5">
+            <Text variant="eyebrow" className="text-lavender mb-5 text-[12px]">
               Journal
             </Text>
-            <Heading variant="display-lg" className="mb-6">
+            <Heading variant="display-lg" className="mb-6 text-[56px] lg:text-[72px] leading-[1.1] tracking-tight">
               Engineering Notes
             </Heading>
-            <Text variant="body-lg" className="text-ink-muted leading-relaxed">
+            <Text variant="body-lg" className="text-ink-muted leading-relaxed text-[18px]">
               Technical articles, research notes, and development journals focused on software systems and HCI.
             </Text>
           </div>
           
           <Link href="/writing">
-            <Button variant="secondary" className="gap-2 group border-hairline h-10 px-5 text-xs font-medium">
+            <Button variant="secondary" className="gap-2 group border-hairline h-10 px-5 text-[14px] font-medium">
               Read all articles
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
@@ -58,11 +58,11 @@ export const WritingSection = () => {
               className="group block p-8 md:p-10 rounded-lg border border-hairline bg-surface-1 hover:bg-surface-2 transition-all duration-300 relative overflow-hidden"
             >
               <div className="flex items-center gap-3 mb-6">
-                <Text variant="caption" className="text-lavender font-semibold tracking-widest uppercase text-[10px]">
+                <Text variant="caption" className="text-lavender font-semibold tracking-widest uppercase text-[12px]">
                   {article.category}
                 </Text>
                 <div className="h-1 w-1 rounded-full bg-hairline-strong opacity-40" />
-                <Text variant="caption" className="text-ink-subtle text-[10px] uppercase tracking-wider">
+                <Text variant="caption" className="text-ink-subtle text-[12px] uppercase tracking-wider">
                   {article.date}
                 </Text>
               </div>
@@ -71,12 +71,12 @@ export const WritingSection = () => {
                 {article.title}
               </Heading>
               
-              <Text variant="body-sm" className="text-ink-muted mb-10 leading-relaxed line-clamp-2">
+              <Text variant="body-sm" className="text-ink-muted mb-10 leading-relaxed line-clamp-2 text-[18px]">
                 {article.excerpt}
               </Text>
               
-              <div className="flex items-center text-caption text-ink-subtle gap-2 font-mono text-[10px] uppercase tracking-widest pt-6 border-t border-hairline/50">
-                <BookOpen className="h-3 w-3" />
+              <div className="flex items-center text-caption text-ink-subtle gap-2 font-mono text-[12px] uppercase tracking-widest pt-6 border-t border-hairline/50">
+                <BookOpen className="h-3.5 w-3.5" />
                 {article.readTime}
               </div>
             </Link>
