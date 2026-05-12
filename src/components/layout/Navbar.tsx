@@ -17,13 +17,11 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-hairline bg-canvas/80 backdrop-blur-md h-20">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-10">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="h-6 w-6 rounded bg-lavender flex items-center justify-center text-white font-bold text-[10px] group-hover:bg-lavender-hover transition-colors">
-              IS
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="flex items-baseline gap-1.5 font-mono text-[20px] font-bold tracking-tight">
+              <span className="text-lavender transition-colors group-hover:text-lavender-hover">Irsal</span>
+              <span className="text-ink-tertiary">Shydiq</span>
             </div>
-            <span className="text-[18px] font-medium tracking-tight text-ink hidden sm:block">
-              {siteMetadata.name}
-            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-7">

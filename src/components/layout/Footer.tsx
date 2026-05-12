@@ -13,13 +13,9 @@ export const Footer = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
           <div className="md:col-span-5">
-            <Link href="/" className="flex items-center gap-2.5 mb-6 group w-fit">
-              <div className="h-6 w-6 rounded bg-lavender flex items-center justify-center text-white font-bold text-[10px] group-hover:bg-lavender-hover transition-colors">
-                IS
-              </div>
-              <span className="text-[13px] font-medium tracking-tight text-ink">
-                {siteMetadata.name}
-              </span>
+            <Link href="/" className="flex items-center gap-1.5 mb-6 group w-fit font-mono text-[18px] font-bold tracking-tight">
+              <span className="text-lavender transition-colors group-hover:text-lavender-hover">Irsal</span>
+              <span className="text-ink-tertiary">Shydiq</span>
             </Link>
             <Text variant="body-sm" className="text-ink-muted max-w-xs leading-relaxed">
               Software engineering student focused on building modern systems and digital products with technical maturity.

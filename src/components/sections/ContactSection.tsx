@@ -11,54 +11,71 @@ export const ContactSection = () => {
   return (
     <section className="py-24 md:py-36 border-t border-hairline bg-canvas relative overflow-hidden">
       <Container>
-        <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
-          <div className="h-12 w-12 rounded-xl bg-lavender/10 border border-lavender/20 flex items-center justify-center text-lavender mb-8 mx-auto">
-            <Mail className="h-5 w-5" />
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 items-start relative z-10">
+          {/* Vertical Side Heading */}
+          <div className="hidden lg:block shrink-0 pt-2">
+            <div className="sticky top-32 [writing-mode:vertical-rl] rotate-180 flex items-center gap-6">
+              <div className="h-12 w-[1px] bg-lavender/30" />
+              <Text variant="eyebrow" className="text-lavender text-[12px] font-bold tracking-[0.4em] uppercase">
+                Section / Availability
+              </Text>
+            </div>
           </div>
-          
-          <Text variant="eyebrow" className="text-lavender mb-5">
-            Availability
-          </Text>
-          <Heading variant="display-lg" className="mb-8">
-            Let's build something <span className="text-lavender">intentional</span> together.
-          </Heading>
-          <Text variant="body-lg" className="text-ink-muted mb-12 leading-relaxed">
-            I'm currently open to software engineering internships, technical collaborations, or research opportunities.
-          </Text>
-          
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link href={`mailto:${siteMetadata.email}`} className="w-full sm:w-auto">
-              <Button size="lg" className="w-full h-12 px-10 gap-3 bg-lavender hover:bg-lavender-hover text-white rounded-md transition-all shadow-lg shadow-lavender/10 font-semibold">
-                Get in Touch
-                <ArrowRight className="h-4 w-4" />
+
+          {/* Main Content Area */}
+          <div className="flex-1 max-w-4xl">
+            <div className="mb-16">
+              <Heading variant="display-lg" className="mb-8 text-[56px] lg:text-[72px] leading-[1.05] tracking-tight">
+                Let&apos;s build something <span className="text-lavender">intentional</span> together.
+              </Heading>
+              <Text variant="body-lg" className="text-ink-muted leading-relaxed text-[18px] max-w-2xl">
+                I&apos;m currently open to software engineering internships, technical collaborations, or research opportunities.
+              </Text>
+            </div>
+
+            {/* Info Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 py-12 border-y border-hairline mb-16">
+              <div className="space-y-4">
+                <span className="text-ink-tertiary text-[11px] font-bold uppercase tracking-[0.2em]">Location</span>
+                <p className="text-ink font-medium text-[18px]">Bandung, Indonesia (GMT+7)</p>
+              </div>
+              <div className="space-y-4">
+                <span className="text-ink-tertiary text-[11px] font-bold uppercase tracking-[0.2em]">Current Status</span>
+                <div className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-lavender animate-pulse" />
+                  <p className="text-ink font-medium text-[18px]">Open for Internship</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <span className="text-ink-tertiary text-[11px] font-bold uppercase tracking-[0.2em]">Core Focus</span>
+                <p className="text-ink font-medium text-[18px]">Software & Systems Engineering</p>
+              </div>
+              <div className="space-y-4">
+                <span className="text-ink-tertiary text-[11px] font-bold uppercase tracking-[0.2em]">Response Latency</span>
+                <p className="text-ink font-medium text-[18px]">Typically &lt; 24 Hours</p>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link href={`mailto:${siteMetadata.email}`}>
+                <Button size="lg" className="h-14 px-10 gap-3 bg-lavender hover:bg-lavender-hover text-white rounded-md transition-all font-bold text-[15px]">
+                  Get in Touch
+                  <ArrowRight className="h-4.5 w-4.5" />
+                </Button>
+              </Link>
+              <Button variant="secondary" size="lg" className="h-14 px-10 gap-3 border-hairline bg-surface-1 hover:bg-surface-2 text-ink rounded-md transition-all font-bold text-[15px]">
+                <Calendar className="h-4.5 w-4.5" />
+                Schedule a Call
               </Button>
-            </Link>
-            <Button variant="secondary" size="lg" className="h-12 px-10 gap-3 border-hairline bg-surface-1 hover:bg-surface-2 text-ink rounded-md transition-all font-semibold">
-              <Calendar className="h-4 w-4" />
-              Schedule a Call
-            </Button>
-          </div>
-          
-          <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-12 w-full pt-12 border-t border-hairline text-center sm:text-left">
-            <div className="space-y-3">
-              <Text variant="caption" className="uppercase tracking-[0.2em] font-bold text-ink-tertiary">Location</Text>
-              <Text variant="body-sm" className="font-medium">Bandung, ID (GMT+7)</Text>
-            </div>
-            <div className="space-y-3">
-              <Text variant="caption" className="uppercase tracking-[0.2em] font-bold text-ink-tertiary">Current Status</Text>
-              <Text variant="body-sm" className="font-medium">Open for Internship</Text>
-            </div>
-            <div className="space-y-3">
-              <Text variant="caption" className="uppercase tracking-[0.2em] font-bold text-ink-tertiary">Focus</Text>
-              <Text variant="body-sm" className="font-medium">Software & Systems</Text>
             </div>
           </div>
         </div>
       </Container>
       
-      {/* Background visual element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[800px] h-[800px] bg-lavender/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute top-[20%] right-[10%] -z-10 h-64 w-64 bg-lavender/10 blur-[80px] rounded-full pointer-events-none animate-pulse" />
+      {/* Background visual detail */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-lavender/[0.03] to-transparent -z-10" />
+      <div className="absolute -bottom-24 -left-24 h-96 w-96 bg-lavender/[0.05] blur-[100px] rounded-full -z-10" />
     </section>
   );
 };
